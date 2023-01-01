@@ -1,4 +1,5 @@
 return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
 		--LSP
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -12,9 +13,10 @@ return require('packer').startup(function(use)
     "glepnir/lspsaga.nvim",
     branch = "main",
 	})
+	use 'SirVer/ultisnips'
+	use 'honza/vim-snippets'
 
 	--Visual
-  use 'wbthomason/packer.nvim'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
 	use 'nvim-treesitter/nvim-treesitter'
@@ -42,7 +44,7 @@ return require('packer').startup(function(use)
         }
 	use 'MattesGroeger/vim-bookmarks'
 	use 'tom-anders/telescope-vim-bookmarks.nvim'
---	use 'nvim-telescope/telescope-file-browser.nvim' 
+--use 'nvim-telescope/telescope-file-browser.nvim' 
 	use({
 		"nvim-telescope/telescope-project.nvim",
 		after = "telescope.nvim",
@@ -60,12 +62,10 @@ return require('packer').startup(function(use)
   "folke/zen-mode.nvim",
   config = function()
     require("zen-mode").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+   }
   end
-}
+	}
+	use "lukas-reineke/indent-blankline.nvim"
 
 
 end)

@@ -23,6 +23,11 @@ local cmp = require'cmp'
  			winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
     },
 	},
+	 snippet = {
+      expand = function(args)
+        vim.fn["UltiSnips#Anon"](args.body)
+      end,
+    },
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -32,14 +37,17 @@ local cmp = require'cmp'
 		  ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-     -- elseif vim.fn["vsnip#available"](1) == 1 then
-     --   feedkey("<Plug>(vsnip-expand-or-jump)", "")
       elseif has_words_before() then
         cmp.complete()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
     end, { "i", "s" }),
+
+		['<C-Space>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
 
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
@@ -57,6 +65,7 @@ local cmp = require'cmp'
         nvim_lsp = "[LSP]",
         nvim_lua = "[Lua]",
 				rg = "[rg]",
+				ultisnips = "[Snips]",
       })[entry.source.name]
       return vim_item
     end
@@ -77,9 +86,7 @@ local cmp = require'cmp'
     },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    --[[ { name = "vsnip" }, -- For vsnip users. ]]
-    -- { name = "ultisnips" }, -- For ultisnips users.
-    -- { name = "snippy" }, -- For snippy users.
+    { name = "ultisnips" }, -- For ultisnips users.
     { name = "buffer" },
     { name = "path" },
     { name = "emoji" },

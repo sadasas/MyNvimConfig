@@ -66,3 +66,4 @@ keymap('n', '<leader>fba',  ":lua require('telescope').extensions.vim_bookmarks.
 
 --zenmode
 keymap('n', '<leader>z', ":lua require('zen-mode').toggle()<CR>", opts)
+

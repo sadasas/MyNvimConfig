@@ -5,6 +5,7 @@ require("telescope").setup({
       theme = "dropdown",
       sync_with_nvim_tree = true, -- default false		},
 	},
+	}
 })
 
 require("telescope").load_extension("project")

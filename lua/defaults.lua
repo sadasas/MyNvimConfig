@@ -96,3 +96,9 @@ vim.cmd ("highlight TelescopeSelection guibg=#F0FF42 guifg=#000000")
 vim.g.bookmark_save_per_working_dir = 1 
 vim.g.bookmark_auto_close = 1
 vim.g.bookmark_auto_save = 0
+
+--indent blankline
+vim.cmd [[highlight IndentBlanklineIndent guifg=#121212 
+]]
+
+--UltiSnips
