@@ -10,6 +10,12 @@ local on_attach = function(client, bufnr)
 				vim.lsp.buf.format({ bufnr = bufnr })
 			end,
 		})
+	else
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			callback = function()
+				vim.lsp.buf.format()
+			end,
+		})
 	end
 end
 
