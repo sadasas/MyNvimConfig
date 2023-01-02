@@ -46,6 +46,18 @@ local config = {
 				none = " ",
 			},
 		},
+		icons = {
+			glyphs = {
+				git = {
+					unstaged = "ﮮ",
+					untracked = "",
+					deleted = "ﮁ",
+					staged = "",
+					renamed = "凜",
+					ignored = "",
+				},
+			},
+		},
 	},
 	view = {
 		mappings = {
@@ -83,10 +95,11 @@ local config = {
 			max = vim.diagnostic.severity.ERROR,
 		},
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+
+			hint = " ",
+			info = " ",
+			warning = " ",
+			error = " ",
 		},
 	},
 }

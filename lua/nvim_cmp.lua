@@ -37,18 +37,14 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
+			elseif ultisnips.expand_or_jumpable() then
+				ultisnips.expand_or_jump()
 			elseif has_words_before() then
 				cmp.complete()
 			else
 				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 			end
 		end, { "i", "s" }),
-
-		["<C-Space>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Insert,
-			select = true,
-		}),
-
 		["<S-Tab>"] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item()
