@@ -80,6 +80,7 @@ vim.cmd("highlight! LspSagaHoverBorder guifg=#F0FF42")
 vim.cmd("highlight! LSOutlinePreviewBorder guifg=#F0FF42")
 vim.cmd("highlight! LspSagaRenameBorder guifg=#F0FF42")
 vim.cmd("highlight! LspSagaDiagnosticBorder guifg=#F0FF42")
+vim.cmd("highlight! LspSagaCodeActionBorder  guifg=#F0FF42")
 
 --Telescope
 --highlight

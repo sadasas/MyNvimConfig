@@ -15,6 +15,7 @@ return require("packer").startup(function(use)
 	})
 	use("SirVer/ultisnips")
 	use("honza/vim-snippets")
+	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	--Visual
@@ -34,7 +35,6 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use("nvim-treesitter/playground")
 	use("nvim-treesitter/nvim-treesitter-context")
-	use("folke/twilight.nvim")
 	use("andymass/vim-matchup")
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -56,18 +56,18 @@ return require("packer").startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
 	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
+	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	use({
-		"folke/zen-mode.nvim",
-		config = function()
-			require("zen-mode").setup({})
-		end,
-	})
+	use("folke/zen-mode.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("numToStr/Comment.nvim")
 end)
