@@ -55,6 +55,36 @@ local highlights = {
 		bold = true,
 		italic = true,
 	},
+	info = {
+		fg = "#808080",
+	},
+	info_selected = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	info_visible = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	info_diagnostic = {
+		fg = "#F18F01",
+	},
+	info_diagnostic_selected = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	info_diagnostic_visible = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
 	warning = {
 		fg = "#808080",
 	},
@@ -80,7 +110,8 @@ local highlights = {
 		italic = true,
 	},
 	warning_diagnostic_visible = {
-		bg = "#000000",
+		fg = "#000000",
+		bg = "#F0FF42",
 		bold = true,
 		italic = true,
 	},
