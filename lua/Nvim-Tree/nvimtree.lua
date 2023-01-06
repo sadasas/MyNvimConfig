@@ -1,6 +1,4 @@
 local lib = require("nvim-tree.lib")
-local view = require("nvim-tree.view")
-local nvimtree = require("nvim-tree")
 
 --change root / cwd to acive buffer
 local function change_root_to_global_cwd()
@@ -28,11 +26,6 @@ local git_add = function()
 end
 
 local config = {
-	--	sync_root_with_cwd = true,
-	--	respect_buf_cwd = true,
-	--	update_focused_file={
-	--	enable = true,
-	--update_root = true;},
 	reload_on_bufenter = true,
 	renderer = {
 		indent_markers = {

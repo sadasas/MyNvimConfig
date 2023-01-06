@@ -37,12 +37,12 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif ultisnips.expand_or_jumpable() then
-				ultisnips.expand_or_jump()
+				-- elseif ultisnips.expand_or_jumpable() then
+				-- ultisnips.expand_or_jump()
 			elseif has_words_before() then
 				cmp.complete()
 			else
-				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+				fallback()
 			end
 		end, { "i", "s" }),
 		["<S-Tab>"] = cmp.mapping(function()
@@ -83,7 +83,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "ultisnips" }, -- For ultisnips users.
-		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "emoji" },
 		{ name = "nvim_lsp_signature_help" },
@@ -116,17 +115,4 @@ cmp.setup.cmdline(":", {
 	}, {
 		{ name = "cmdline" },
 	}),
-})
-
--- Set up lspconfig.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
---fix issue clangd offset encoding
-capabilities.offsetEncoding = { "utf-16" }
-
-require("lspconfig").clangd.setup({
-	capabilities = capabilities,
-})
-
-require("lspconfig").sumneko_lua.setup({
-	capabilities = capabilities,
 })

@@ -55,6 +55,36 @@ local highlights = {
 		bold = true,
 		italic = true,
 	},
+	hint = {
+		fg = "#808080",
+	},
+	hint_selected = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	hint_visible = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	hint_diagnostic = {
+		fg = "#F18F01",
+	},
+	hint_diagnostic_selected = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
+	hint_diagnostic_visible = {
+		fg = "#000000",
+		bg = "#F0FF42",
+		bold = true,
+		italic = true,
+	},
 	info = {
 		fg = "#808080",
 	},

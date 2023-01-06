@@ -100,5 +100,3 @@ vim.g.bookmark_auto_save = 0
 --indent blankline
 vim.cmd([[highlight IndentBlanklineIndent guifg=#121212 
 ]])
-
---UltiSnips

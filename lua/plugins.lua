@@ -1,6 +1,8 @@
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	--LSP
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
@@ -17,7 +19,10 @@ return require("packer").startup(function(use)
 	use("honza/vim-snippets")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("jayp0521/mason-null-ls.nvim")
 
+	--debuggers
+	use("mfussenegger/nvim-dap")
 	--Visual
 	use("vim-airline/vim-airline")
 	use("vim-airline/vim-airline-themes")
@@ -40,21 +45,10 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
-		config = function()
-			require("telescope_")
-		end,
 	})
 	use("MattesGroeger/vim-bookmarks")
 	use("tom-anders/telescope-vim-bookmarks.nvim")
-	--use 'nvim-telescope/telescope-file-browser.nvim'
-	use({
-		"nvim-telescope/telescope-project.nvim",
-		after = "telescope.nvim",
-		config = function()
-			require("telescope_project")
-		end,
-		requires = { "nvim-telescope/telescope.nvim" },
-	})
+	use("nvim-telescope/telescope-project.nvim")
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
@@ -67,7 +61,5 @@ return require("packer").startup(function(use)
 	})
 	use("folke/zen-mode.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
 	use("numToStr/Comment.nvim")
 end)

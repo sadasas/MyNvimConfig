@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
@@ -154,6 +159,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -211,11 +221,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope-project.nvim"] = {
-    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22telescope_project\frequire\0" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\telescope-project.nvim",
+    path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-project.nvim",
     url = "https://github.com/nvim-telescope/telescope-project.nvim"
   },
   ["telescope-vim-bookmarks.nvim"] = {
@@ -224,10 +231,7 @@ _G.packer_plugins = {
     url = "https://github.com/tom-anders/telescope-vim-bookmarks.nvim"
   },
   ["telescope.nvim"] = {
-    after = { "telescope-project.nvim" },
-    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15telescope_\frequire\0" },
     loaded = true,
-    only_config = true,
     path = "C:\\Users\\Wahyu\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
@@ -269,22 +273,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15telescope_\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd telescope-project.nvim ]]
-
--- Config for: telescope-project.nvim
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22telescope_project\frequire\0", "config", "telescope-project.nvim")
-
-time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
